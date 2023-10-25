@@ -25,7 +25,7 @@ QBCore.Commands.Add('hasg', '/hasg[Oyuncu ID]', {}, false, function(source, targ
 			if target ~= 0 then
             local coords = GetEntityCoords(target)
             TriggerClientEvent('client:hastane', source, coords)
-			TriggerClientEvent('QBCore:Notify', source, "Oyuncu başarıyla bankaya gönderildi.", 'success')
+			TriggerClientEvent('QBCore:Notify', source, "Oyuncu başarıyla hastaneye gönderildi.", 'success')
 			else
             TriggerClientEvent('QBCore:Notify', source, "Oyuncu ID bulunamadı.", 'error')
 			end
