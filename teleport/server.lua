@@ -6,14 +6,15 @@ QBCore.Commands.Add('bankg', '/bankg [Oyuncu ID]', {}, false, function(source, t
 		local target = GetPlayerPed(tonumber(targetPlayer[1]))
 			if target ~= 0 then
 			local coords = GetEntityCoords(target)
-			TriggerClientEvent('client:banka', source, coords)
+			SetEntityCoords(target, cfg.banka, true)
 			TriggerClientEvent('QBCore:Notify', source, "Oyuncu başarıyla bankaya gönderildi.", 'success')
 			else
 			 TriggerClientEvent('QBCore:Notify', source, "Oyuncu ID bulunamadı.", 'error')
 			end
 		end
 	else
-	TriggerClientEvent('client:banka', source)
+	SetEntityHeading(source, cfg.heading)
+	SetEntityCoords(source, cfg.banka, true)
 	TriggerClientEvent('QBCore:Notify', source, "Başarıyla bankaya ışınlandın.", 'success')
 	end
 end, 'admin')
@@ -24,14 +25,15 @@ QBCore.Commands.Add('hasg', '/hasg[Oyuncu ID]', {}, false, function(source, targ
         local target = GetPlayerPed(tonumber(targetPlayer[1]))
 			if target ~= 0 then
             local coords = GetEntityCoords(target)
-            TriggerClientEvent('client:hastane', source, coords)
+            SetEntityCoords(target, cfg.hastane, true)
 			TriggerClientEvent('QBCore:Notify', source, "Oyuncu başarıyla hastaneye gönderildi.", 'success')
 			else
             TriggerClientEvent('QBCore:Notify', source, "Oyuncu ID bulunamadı.", 'error')
 			end
 		end
 	else
-	TriggerClientEvent('client:hastane', source)
+	SetEntityHeading(source, cfg.heading2)
+	SetEntityCoords(source, cfg.hastane, true)
 	TriggerClientEvent('QBCore:Notify', source, "Başarıyla hastaneye ışınlandın.", 'success')
 	end
 end, 'admin')
@@ -42,16 +44,15 @@ QBCore.Commands.Add('iskg', '/iskg [Oyuncu ID]', {}, false, function(source, tar
         local target = GetPlayerPed(tonumber(targetPlayer[1]))
 			if target ~= 0 then
             local coords = GetEntityCoords(target)
-            TriggerClientEvent('client:iskele', source, coords)
+            SetEntityCoords(target, cfg.iskele, true)
 			TriggerClientEvent('QBCore:Notify', source, "Oyuncu başarıyla iskeleye gönderildi.", 'success')
 			else
             TriggerClientEvent('QBCore:Notify', source, "Oyuncu ID bulunamadı.", 'error')
 			end
 		end
 	else
-	TriggerClientEvent('client:iskele', source)
+	SetEntityCoords(source, cfg.iskele, true)
+	SetEntityHeading(source, cfg.heading3)
 	TriggerClientEvent('QBCore:Notify', source, "Başarıyla iskeleye ışınlandın.", 'success')
 	end
 end, 'admin')
-
-
