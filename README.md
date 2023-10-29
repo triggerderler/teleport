@@ -5,4 +5,6 @@
 
 /hasg Oyuncu ID 
 
-Oyuncu ID girmezseniz doğrudan teleport olursunuz
+/iskg Oyuncu ID 
+
+Oyuncu ID boş kalırsa doğrudan tp olursunuz
